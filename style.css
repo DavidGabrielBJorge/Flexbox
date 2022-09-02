@@ -1,0 +1,385 @@
+ /*
+	
+	Resumo de Flex Box:
+
+	display: flex; - inicia o flex no container
+	flex-grow - aumenta o tamanho elemento preenchendo os espaços vazios
+	flex-shrink - dimminui o tamanho elemento preenchendo
+	flex-basis - tamanho inicial do elemento e o resto é preenchido pelo grow
+
+	-------------------------------------------------------------------------
+
+	flex-direction - muda a direção que os elementos estão (row, column)
+	flex-order - muda a ordem do elemento indivualmente
+	justify-content - alinha os elementos no eixo principal
+	align-items - alinha os elementos no eixo secundário
+	align-self - alinha o elemento em particular
+
+*/
+
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex; 
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+
+
+}
+
+.first {
+	background-color: red;
+}
+
+.second {
+	background-color: green;
+	align-self: flex-start;
+}
+
+.third {
+	background-color: blue;
+
+}
+
+/*
+==========================================================================================
+Código para testar a propriedade flex-grow
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	 display: flex;
+	 width: 100%;
+	 height: 300px;
+	 background-color: #FFF;
+	 justify-content: center;
+	 align-items: center;
+ }
+ 
+ .box {
+	 height: 100px;
+	 width: 100px;
+	 flex-grow:1;  
+ }
+ 
+ .first {
+	 background-color: red;
+	 flex-grow:2;  Ocupa 2 vezes a área do verde e do azul
+ 
+ }
+ 
+ .second {
+	 background-color: green;
+ 
+ }
+ 
+ .third {
+	 background-color: blue;
+ }
+*/
+
+/*
+==========================================================================================
+Código para testar a propriedade flex-basis
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	flex-grow:1;  
+	flex-basis:500px; Ao diminuir a tela o formato da box deve ser no mínimo 500px
+}
+
+.first {
+	background-color: red;
+	flex-shrink:1; 
+
+}
+
+.second {
+	background-color: green;
+	flex-shrink:1;
+}
+
+.third {
+	background-color: blue;
+	flex-shrink:1;
+}
+*/
+
+/*
+==========================================================================================
+Código para testar a propriedade flex-direction
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex; inicia o flex no container 
+
+	flex-direction: row-reverse; ;  inverte a ordem dos elementos na linha
+	ou
+	flex-direction: columnn; transforma em layout de colunas, nesse caso o flex-basis será aplicado na altura
+
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	flex-grow:1;  
+	flex-basis:300px;
+}
+
+.first {
+	background-color: red;
+
+
+}
+
+.second {
+	background-color: green;
+
+
+}
+
+.third {
+	background-color: blue;
+
+}
+*/
+/*
+==========================================================================================
+Código para testar a propriedade flex-order
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex;inicia o flex no container 
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	flex-grow:1;  
+	flex-basis:300px;
+}
+
+.first {
+	background-color: red;
+	order: 3; O bloco vermelho vai ficar em ultimo lugar
+}
+
+.second {
+	background-color: green;
+	order: 1; O bloco verde vai ficar em primeiro lugar
+}
+
+.third {
+	background-color: blue;
+	order: 2; O bloco azul vai ficar em segundo lugar
+
+}
+*/
+
+/*
+==========================================================================================
+Código para testar a propriedade short hand
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	
+}
+
+.box {
+	height: 100px;
+	flex: 1 1 300px; Nesse caso esta declarando o grow shrinks basis
+}
+
+.first {
+	background-color: red;
+	order: 3;
+}
+
+.second {
+	background-color: green;
+	order: 1;
+}
+
+.third {
+	background-color: blue;
+	order: 2;
+
+}
+*/
+/*
+==========================================================================================
+Código para testar a propriedade justify-content
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex; 
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: flex-end; Vai pegar os blocos e colocar no fim
+	ou
+	justify-content: start; Vai pegar os blocos e colocar no início
+	ou
+	justify-content: space-between; Cria um espaço entre os blocos usando o espaço máximo do container 
+	
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+
+
+}
+
+.first {
+	background-color: red;
+}
+
+.second {
+	background-color: green;
+}
+
+.third {
+	background-color: blue;
+
+}
+*/
+/*
+==========================================================================================
+Código para testar a propriedade align-items
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex; 
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: space-between;
+	align-items: flex-end; Joga os box para baixo
+	ou
+	align-items: flex-start; Joga os box pra cima
+	ou 
+	align-items: center; Centraliza os box
+	ou
+	align-items: stretch; Alonga os box, para funcionar deve tirar o height dos box
+
+	
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+
+
+}
+
+.first {
+	background-color: red;
+}
+
+.second {
+	background-color: green;
+}
+
+.third {
+	background-color: blue;
+
+}
+*/
+/*
+==========================================================================================
+Código para testar a propriedade align-self
+==========================================================================================
+body {
+	background-color: #DDD;
+}
+
+.container {
+	display: flex; 
+	width: 100%;
+	height: 300px;
+	background-color: #FFF;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+
+
+}
+
+.first {
+	background-color: red;
+}
+
+.second {
+	background-color: green;
+	align-self: flex-start; O bloco verde sobe
+	ou 
+	align-end: flex-start; O bloco verde desce
+}
+
+.third {
+	background-color: blue;
+
+}
+*/
